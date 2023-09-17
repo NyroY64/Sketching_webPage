@@ -76,6 +76,7 @@ button{
   background-color: white;
   -webkit-user-drag: none;
   -moz-window-dragging: none;
+  transition: all .1s ease-in-out ;
 }
 
 #colorSelector{

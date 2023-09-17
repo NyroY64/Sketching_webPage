@@ -30,22 +30,23 @@ sizeSelector.addEventListener('input',()=>{
      drawGrid(parseInt(sizeSelector.value));
 });
 
+
+
 //Buttons
-colorMode.addEventListener('click',()=>{mode='color'});
+colorMode.addEventListener('click',()=>{mode='color'}); 
 rainbowMode.addEventListener('click',()=>{mode='rainbow'});
+
 eraserMode.addEventListener('click',()=>{mode='erase'});
-clearButton.addEventListener('onclick',()=>{
-    let div=sketchArea.querySelectorAll()
-})
+clearButton.addEventListener('click',clearSketch)
 
-
+drawGrid(16);
 
 
 //drawing section 
 function drawGrid(dimensions) {
+    clearSketch();
     sketchArea.style.gridTemplateColumns =`repeat(${dimensions},1fr)`; //this draws the vertical-grid 
     sketchArea.style.gridTemplateRows =`repeat(${dimensions},1fr)`; //this draws a horizontal-grid
-
 
     //this part of the code fills out the grid with div's
     for (let i = 0; i < (dimensions**2) ; i++) {
@@ -77,3 +78,11 @@ function changeColor(e) {
     
 }
 
+function clearSketch(){
+    let pixels =sketchArea.querySelectorAll('.grid-items');
+    pixels.forEach(pixel => {
+        
+        pixel.style.backgroundColor='#ffffff';
+        
+    });
+}
