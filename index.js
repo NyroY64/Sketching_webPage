@@ -8,6 +8,8 @@ const eraserMode=document.querySelector('.eraseMode');
 const sizeSelector=document.querySelector('#sizeSelector');
 const sizeDisplay=document.querySelector('.sizeDisplay');
 
+const clearButton=document.querySelector('.clearButton');
+
 //This part of the code makes the drawing work 
 
 let mouseDown = false //we create a boolean to track if the mouse button is clicked
@@ -23,14 +25,18 @@ let color=defaultColor;
 let size=defaultSize;
 
 
-sizeSelector.addEventListener('click',()=>{sizeDisplay.innerHTML=sizeSelector.value});
-sizeSelector.addEventListener('change',drawGrid(parseInt(sizeSelector.value)));
+sizeSelector.addEventListener('input',()=>{sizeDisplay.innerHTML=sizeSelector.value});
+sizeSelector.addEventListener('input',()=>{
+     drawGrid(parseInt(sizeSelector.value));
+});
 
 //Buttons
 colorMode.addEventListener('click',()=>{mode='color'});
 rainbowMode.addEventListener('click',()=>{mode='rainbow'});
 eraserMode.addEventListener('click',()=>{mode='erase'});
-
+clearButton.addEventListener('onclick',()=>{
+    let div=sketchArea.querySelectorAll()
+})
 
 
 
@@ -47,8 +53,7 @@ function drawGrid(dimensions) {
         div.setAttribute('class','grid-items');
         
         div.addEventListener('mouseover',changeColor);
-        div.addEventListener('mousedown',changeColor);
-  
+        
 
         sketchArea.appendChild(div);
     }
@@ -71,6 +76,4 @@ function changeColor(e) {
     
     
 }
-
-drawGrid(size);
 

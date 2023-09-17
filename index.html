@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eatch_a_Sketch</title>
@@ -14,13 +14,18 @@
             <input class="colorSelector" type="color" >
             <button class="colorMode" >Color Mode</button>
             <button class="rainbowMode">Rainbow Mode</button>
-            <button class="eraseMode" >Eraser</button>            
-            <input type="range" name="dimensions" id="sizeSelector" value="16" min="1" max="256" >
-            <div class="sizeDisplay"></div>
+            <button class="eraseMode" >Eraser</button>    
+                <input type="range" name="dimensions" id="sizeSelector" value="16" min="1" max="128" >
+            <div>
+                <div class="sizeDisplay"></div>
+            </div>
         </div>
         
         <div class="sketch">
 
+        </div>
+        <div class="options">
+            <button class="clearButton">Clear</button>
         </div>
     </div>
     

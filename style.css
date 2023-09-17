@@ -40,9 +40,11 @@ body{
 }
 
 .options{
-  width: 20%;
-  height: 60%;
+  min-width: 200px;
+  min-height: 60%;
   margin-right: 30px;
+  margin-left: 30px;
+
 
   display: flex;
   flex-direction: column;
@@ -57,10 +59,12 @@ button{
   border-radius: .5em;
 }
 
+
 .sketch{
   width: 600px;
   height: 600px;
   margin-left: 30px;
+  margin-right: 30px;
   padding: 20px;
 
   display: grid;
@@ -81,4 +85,14 @@ button{
   height: 50px;
   writing-mode: horizontal-tb !important;
   border-radius:50%;
+}
+
+input[type='range']{
+  accent-color: #FFFFFF;
+}
+.sizeDisplay{
+  position:relative ;
+  bottom: 1%;
+  left: 1%;
+  color: #FFFFFF;
 }
